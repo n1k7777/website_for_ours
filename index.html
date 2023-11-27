@@ -4,126 +4,118 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
+    <title>Energy Solar Estate</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="mediaqueries.css" />
   </head>
   <body>
-    <nav id="desktop-nav">
-      <div class="logo">John Doe</div>
-      <div>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
+    <header>
+      <nav class="navbar">
+        <a href="#" class="nav-brading">Logo</a>
+  
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="#" class="nav-link">About us</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Info</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Station</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Contacts</a></li>
+          <li>
+            <button class="dropdown-btn">Language</button>
+  
+            <div class="dropdown-content">
+              <a href="#">EN</a>
+              <a href="#">UA</a>
+            </div>
+          </li>
         </ul>
-      </div>
-    </nav>
-    <nav id="hamburger-nav">
-      <div class="logo">John Doe</div>
-      <div class="hamburger-menu">
-        <div class="hamburger-icon" onclick="toggleMenu()">
-          <span></span>
-          <span></span>
-          <span></span>
+  
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
         </div>
-        <div class="menu-links">
-          <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-        </div>
-      </div>
-    </nav>
+      </nav>
+    </header>
+
     <section id="profile">
-      <div class="section__pic-container">
-        <img src="./assets/profile-pic.png" alt="John Doe profile picture" />
-      </div>
       <div class="section__text">
-        <p class="section__text__p1">Hello, I'm</p>
-        <h1 class="title">John Doe</h1>
-        <p class="section__text__p2">Frontend Developer</p>
-        <div class="btn-container">
-          <button
-            class="btn btn-color-2"
-            onclick="window.open('./assets/resume-example.pdf')"
-          >
-            Download CV
-          </button>
-          <button class="btn btn-color-1" onclick="location.href='./#contact'">
-            Contact Info
-          </button>
+        <img src="./assets/background.png" alt="background">
+        <h2 class="first-text">ЗЕЛЕНА ЕНЕРГІЯ З</h2>
+        <h1 class="second-text">ТОВ "ЕНЕРДЖІ СОЛАР ІСТЕЙТ"</h1>
+        <p class="third-text">Компанія, яка виробляє сонячну енергію</p>
+      </div>
+    </section>
+
+    <section id="pro-nas">
+      <h2 class="title">Про нас</h2>
+      <script src="https://unpkg.com/scrollreveal"></script>
+      <div class="section-container">
+        <div class="section__pic-container">
+          <img class="about-pic" src="https://cdn.discordapp.com/attachments/997271816672382996/1178648591552753716/n1k7777_solar_station_on_the_field_real_life_fb17c9bb-c46d-40ce-a839-ca9e38ff549e.png?ex=6576e90a&is=6564740a&hm=38b0d62a0ac2a9b0a375ee2c3a6ae3b9350b122ffd29dca7cd6afe66324dd409&" alt="Profile picture"/>
         </div>
-        <div id="socials-container">
-          <img
-            src="./assets/linkedin.png"
-            class="icon"
-            onclick="location.href='https://linkedin.com/'"
-            alt="My LinkedIn profile"
-          />
-          <img
-            src="./assets/github.png"
-            class="icon"
-            onclick="location.href='https://github.com/'"
-            alt="My Github profile"
-          />
+        <div class="text-container">
+          <p style="text-indent: 30px">
+            Компанія ТОВ "ЕНЕРДЖІ СОЛАР ІСТЕЙТ" є учасником українського ринку відновлюваної енергетики з 2020 року в ролі незалежного виробника електроенергії з відновлюваних джерел енергії (ВДЕ). Під управлінням компанії 1 сонячна електростанція (наземна) в Дніпропетровській області, потужністю 3.69 МВт, введена в експлуатацію в 2019 році.
+
+            Елетроенергію, вироблену компанією ТОВ "ЕНЕРДЖІ СОЛАР ІСТЕЙТ" викуповує Гарантований покупець за зеленим тарифом. За підсумками 2020 р на електростанції компанії вироблено 2.25 млн. кВт-год. "зеленої" електроенергії.
+          </p>
         </div>
       </div>
     </section>
-    <section id="about">
-      <p class="section__text__p1">Get To Know More</p>
-      <h1 class="title">About Me</h1>
+
+    <section id="pro-nas">
+      <h2 class="title">Інформація про станцію</h2>
+      <script src="https://unpkg.com/scrollreveal"></script>
       <div class="section-container">
         <div class="section__pic-container">
-          <img
-            class="about-pic"
-            src="./assets/about-pic.png"
-            alt="Profile picture"
-          />
+          <img class="about-pic" src="https://cdn.discordapp.com/attachments/997271816672382996/1178683520416239677/n1k7777_a_lot_of_solar_stations_stand_in_clearing_e55ef4ad-0d5a-4f42-a3b8-a08deaa96578.png?ex=65770992&is=65649492&hm=fc15f0cc010fce236082d019fb0786192048d8c9a0fd11a0bc37ddcdb14b78f1&" alt="Profile picture"/>
         </div>
+        <div class="text-container">
+          <p style="text-indent: 30px">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia voluptatem nobis dolor repellendus illo corrupti aliquam ut neque perspiciatis est sunt, recusandae laborum aperiam consequatur, magnam, esse non dolorem ipsam.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section id="about">
+      <h1 class="title">Інша Інформація</h1>
+      <div class="section-container">
         <div class="about-details-container">
           <div class="about-containers">
             <div class="details-container">
               <img
                 class="icon"
-                src="./assets/experience.png"
+                src="assets/3612359.png"
                 alt="Experience icon"
               />
-              <h3>Experience</h3>
-              <p>2+ years<br />Frontend Development</p>
+              <h3>Код ЕГРПОУ</h3>
+              <p>42226449</p>
             </div>
             <div class="details-container">
               <img
                 class="icon"
-                src="./assets/education.png"
+                src="assets/55281.png"
                 alt="Education icon"
               />
-              <h3>Education</h3>
-              <p>B.Sc. Bachelors Degree<br />M.Sc. Masters Degree</p>
+              <h3> Дата реєстрації</h3>
+              <p>2018-06-11</p>
+            </div>
+            <div class="details-container">
+              <img
+                  class="icon"
+                  src="/assets/checkmark.png"
+                  alt="Experience icon"
+                />
+              <h3>  Дата ліцензії</h3>
+              <p>2020-03-20</p>
             </div>
           </div>
-          <div class="text-container">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore
-              omnis sapiente hic odio quod voluptates alias nobis excepturi
-              perspiciatis natus voluptatem exercitationem voluptas quibusdam
-              deserunt impedit libero rerum adipisci, quos nisi velit sunt!
-              Quibusdam magni laborum perspiciatis, eaque quos nobis?
-            </p>
-          </div>
+         
         </div>
       </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#experience'"
-      />
     </section>
     <section id="experience">
-      <p class="section__text__p1">Explore My</p>
-      <h1 class="title">Experience</h1>
+      <h1 class="title">Інформація</h1>
       <div class="experience-details-container">
         <div class="about-containers">
           <div class="details-container">
@@ -248,102 +240,11 @@
           </div>
         </div>
       </div>
-      <img
-        src="/assets/arrow.png"
-        class="icon arrow"
-        onclick="location.href='./#projects'"
-        alt=""
-      />
-    </section>
-    <section id="projects">
-      <p class="section__text__p1">Browse My Recent</p>
-      <h1 class="title">Projects</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                class="project-img"
-                src="/assets/project-1.png"
-                alt="project-1"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Project One</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/';"
-              >
-                GitHub
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://linkedin.com/';"
-              >
-                Live Demo
-              </button>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                class="project-img"
-                src="/assets/project-2.png"
-                alt="project-1"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Project Two</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/';"
-              >
-                GitHub
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://linkedin.com/';"
-              >
-                Live Demo
-              </button>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                class="project-img"
-                src="/assets/project-3.png"
-                alt="project-1"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Project Three</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/';"
-              >
-                GitHub
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://linkedin.com/';"
-              >
-                Live Demo
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <img
-        src="/assets/arrow.png"
-        class="icon arrow"
-        onclick="location.href='./#contact'"
-        alt=""
-      />
-    </section>
+    </section> -->
+
+
     <section id="contact">
-      <p class="section__text__p1">Get In Touch</p>
-      <h1 class="title">Contact Me</h1>
+      <h1 class="title">Наші контакти</h1>
       <div class="contact-info-upper-container">
         <div class="contact-info-container">
           <img
@@ -367,10 +268,11 @@
       <nav>
         <div class="nav-links-container">
           <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#pro-nas">Про нас</a></li>
+            <li><a href="#about">Untitled</a></li>
+            <li><a href="#experience">Інфо</a></li>
+            <li><a href="#projects">Інше</a></li>
+            <li><a href="#contact">Контакти</a></li>
           </ul>
         </div>
       </nav>
