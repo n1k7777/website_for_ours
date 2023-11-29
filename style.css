@@ -12,13 +12,15 @@ body {
 }
 
 :root {
-  --bg-color: #ffd800;
+  --bg-color: #ff9900;
+  --main-color: #ffd800;
 }
 
 html {
   scroll-behavior: smooth;
-  scroll-snap-type: mandatory;
+  scroll-snap-type: y mandatory;
   user-select: none;
+  background-color: var(--main-color);
 }
 
 p {
@@ -51,23 +53,32 @@ nav {
   font-size: 1.2rem;
 }
 
-a {
-  color: black;
-  text-decoration: none;
-  text-decoration-color: white;
+.nav-links-container :hover{
+  color :var(--bg-color);
 }
 
-a:hover {
-  color: grey;
+a:not(.link-pdf) {
+  color: black;
+  text-decoration: none;
+}
+
+a:not(.link-pdf):hover {
+  color: var(--bg-color);
   text-decoration: underline;
   text-underline-offset: 1rem;
-  text-decoration-color: rgb(181, 181, 181);
+  text-decoration-color: var(--bg-color);
 }
 
 .logo {
   font-size: 1.56rem;
   display: flex;
 }
+
+.navbar img{
+  width: 100px;
+  vertical-align: middle;
+}
+
 
 .logo:hover {
   cursor: default;
@@ -77,6 +88,7 @@ a:hover {
   width: 100px;
   vertical-align: middle;
 }
+
 
 .logo p{
   align-self: center;
@@ -104,7 +116,7 @@ a:hover {
 .hamburger-icon span {
   width: 100%;
   height: 2px;
-  background-color: black;
+  background-color: rgb(0, 0, 0);
   transition: all 0.3s ease-in-out;
 }
 
@@ -112,7 +124,7 @@ a:hover {
   position: absolute;
   top: 100%;
   right: 0%;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0), 228;
   width: fit-content;
   max-height: 0;
   overflow: hidden;
@@ -179,21 +191,71 @@ section {
 /* HEADER */
 
 header {
-  background-color: #262626;
+  background-color: rgb(255, 255, 255);
+  position: sticky;
+  width: 100%;
+  top: 0;
+  z-index: 1050;
 }
+
+.hamburger {
+  cursor: pointer;
+  display: none; /* Додайте це, щоб на початку кнопка була прихована */
+}
+
+.hamburger input {
+  display: none;
+}
+
+.hamburger svg {
+  height: 3em;
+  transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line {
+  fill: none;
+  stroke: black;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3;
+  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+              stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line-top-bottom {
+  stroke-dasharray: 12 63;
+}
+
+.hamburger input:checked + svg {
+  transform: rotate(-45deg);
+}
+
+.hamburger input:checked + svg .line-top-bottom {
+  stroke-dasharray: 20 300;
+  stroke-dashoffset: -32.42;
+}
+
+.dropdown-btn img {
+  width: 30px;
+  height: 20px;
+  border-radius: 5px;
+  padding-right: 2px;
+}
+
 
 li {
   list-style: none;
 }
 
 a {
-  color: white;
+  color: rgb(0, 0, 0);
   text-decoration: none;
 }
 
 .navbar {
   min-height: 70px;
   display: flex;
+
   justify-content: space-between;
   align-items: center;
   padding: 0 24px;
@@ -215,7 +277,7 @@ a {
 }
 
 .nav-link:hover {
-  color: yellow;
+  color: var(--bg-color);
 }
 
 .hamburger {
@@ -230,15 +292,14 @@ a {
   margin: 5px auto;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  background-color: white;
+  background-color: rgb(0, 0, 0);
 }
-
-
 /* dropdown menu language */
 
 .dropdown-btn {
-  background-color: #262626;
-  color: white;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0);
+  color: black;
   padding: 10px;
   font-size: 16px;
   border: none;
@@ -246,26 +307,44 @@ a {
   transition: 0.7s ease;
 }
 
+.dropdown-btn:hover {
+  transition: 0.3s ease;
+  color: var(--bg-color);
+  text-decoration: underline;
+  text-underline-offset: 1rem;
+  text-decoration-color: var(--bg-color);
+}
+
 .dropdown-content {
+  width: 100px;
+  border-radius: 12px;
   display: none;
   position: absolute;
-  background-color: #262626;
-  min-width: 160px;
+  background-color: #f4f4f4;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   z-index: 1;
   transition: opacity 0.5s;
 }
 
+
 .dropdown-content a {
-  color: white;
-  padding: 12px 16px;
+  color: black;
+  padding: 12px 20px;
   text-decoration: none;
-  display: block;
+  display: inline-block;
+}
+
+.dropdown-content a img{
+  width: 30px;
+  border-radius: 5px;
+  padding-right: 2px;
 }
 
 .dropdown-content a:hover {
-  color: yellow;
-  transition: 0.4s ease;
+  color: var(--bg-color);
+  text-decoration: underline;
+  text-underline-offset: 0.5rem;
+  transition: 0.3s ease;
 }
 
 .dropdown-btn:focus + .dropdown-content{
@@ -453,7 +532,7 @@ a {
   background: white;
   border-radius: 1.5rem;
   border: rgb(53, 53, 53) 0.1rem solid;
-  border-color: rgb(163, 163, 163);
+  border-color: black;
   text-align: center;
 }
 
@@ -517,7 +596,7 @@ article .icon {
 }
 
 .color-container {
-  border-color: rgb(163, 163, 163);
+  border-color: black;
   background: rgb(250, 250, 250);
 }
 
@@ -534,7 +613,7 @@ article .icon {
 
 .project-btn {
   color: black;
-  border-color: rgb(163, 163, 163);
+  border-color: black;
 }
 
 /* CONTACT SECTION */
@@ -558,7 +637,7 @@ article .icon {
   justify-content: center;
   border-radius: 2rem;
   border: rgb(53, 53, 53) 0.1rem solid;
-  border-color: rgb(163, 163, 163);
+  border-color: black;
   background: rgb(250, 250, 250);
   margin: 2rem auto;
   padding: 0.5rem;
@@ -591,77 +670,14 @@ footer p {
   text-align: center;
 }
 
-.selected-lang{
-  align-items: center;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  width: 70px;
-}
-
-.selected-lang::before{
-  content: '';
-  display: block;
-  width: 30px;
-  height: 30px;
-  background-image: url(https://flagsapi.com/GB/flat/32.png);
-}
-
-.lang-menu{
-  margin-top: 0px;
-}
-
-.lang-menu ul{
-  margin: 0;
-  padding: 0;
-  background-color: #ffffff;
-  border: 1px solid #f2f2f2f2;
-  box-shadow: 0px 1px 10px rgba(0,0,0,0.2);
-  height: 87px;
-  display: none;
-  position: absolute;
-  border-radius: 10px;
-}
-
-.lang-menu ul li{
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
-}
-
-.lang-menu ul li a::before{
-  content: '';
-  display: inline-block;
-  margin-right: 5px;
-  width: 30px;
-  height: 30px;
-  vertical-align: middle;
-}
-
-.lang-menu ul li a{
-  display: block;
-  padding: 5px 10px;
-  font-size: 20px;
-}
-
-.ua::before{
-  background-image: url(https://flagsapi.com/UA/flat/32.png);
-}
-
-.en::before{
-  background-image: url(https://flagsapi.com/GB/flat/32.png);
-}
-
-.lang-menu:hover ul{
-  display: block;
-}
+/* pro nas */
 
 #pro-nas{
+  background-color: var(--main-color);
   margin: 0;
   padding: 50px;
   justify-content: center;
   width: 100%;
-  background-color: rgb(255, 255, 255);
 }
 
 #pro-nas p::first-letter {
@@ -695,7 +711,6 @@ footer p {
   transition: opacity 1s ease, transform 1s ease;
 }
 
-/* Примените анимацию к элементу при активации класса 'visible' */
 .title.visible {
   opacity: 1;
   transform: translateY(0);
@@ -714,22 +729,6 @@ footer p {
 }
 
 
-/* Station SECTION */
-
-#station .section-container {
-  padding-top: calc(50px);
-}
-
-#station .about-pic {
-  padding-top: 0px;
-}
-
-#station  {
-  display: flex;
-
-}
-
-
 /* about section */
 
 #about {
@@ -739,4 +738,79 @@ footer p {
 
 #about .section-container {
   padding-top: calc(50px);
+}
+
+#about {
+  padding-bottom: calc(25rem);
+  padding-top: 20rem;
+}
+
+
+/* station */
+
+#station{
+  margin: 0;
+  padding: 50px;
+  justify-content: center;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+}
+
+#station p::first-letter {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+#station .section__pic-container {
+  padding-top: 30px;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+#station .about-pic{
+  -webkit-box-shadow: 6px 7px 19px 3px var(--bg-color);
+  -moz-box-shadow: 6px 7px 19px 3px var(--bg-color);
+  box-shadow: 6px 7px 19px 3px var(--bg-color);
+  transition: .4s ease;
+}
+
+#station .about-pic:hover {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  transition: .4s ease;
+}
+
+#station .title {
+  margin-bottom: 30px;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+
+/* contact */
+
+#contact .contact-info-container p a:hover {
+  color: var(--bg-color);
+  transition: 0.4s ease;
+}
+
+
+/* link pdf */
+
+a:is(.link-pdf) {
+  transition: 0.3s ease;
+}
+
+img:is(.icon-i):hover{
+  color: var(--bg-color);
+  transition: 0.3s ease;
+}
+
+/* word-spacing */ 
+
+.text-container p {
+  word-spacing: 13px;
+  line-height: 1.5;
+  font-size: x-large;
 }

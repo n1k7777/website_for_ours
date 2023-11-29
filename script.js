@@ -1,13 +1,3 @@
-const hamburger = document.querySelector(".hamburger");
-const navMenu = document.querySelector(".nav-menu");
-
-function toggleMenu() {
-  const menu = document.querySelector(".menu-links");
-  const icon = document.querySelector(".hamburger-icon");
-  menu.classList.toggle("open");
-  icon.classList.toggle("open");
-}
-
 function openMenu() {
   var menu = document.querySelector(".lang-menu");
   if (menu) {
@@ -22,25 +12,42 @@ function openMenu() {
   }
 }
 
-hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("active");
-    navMenu.classList.toggle("active");
-})
+function openHamburger() {
+  var menu = document.querySelector('.nav-menu');
+  if (menu) {
+    menu.classList.toggle("active");
+  }
+}
 
-document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
-    hamburger.classList.remove("active");
-    navMenu.classList.remove("active");
-}));
+
+
+
+function closeMenu() {
+  var menu = document.querySelector('.nav-menu');
+  var dropDownBar = document.querySelector('.hamburger input')
+  if (menu && dropDownBar) {
+    menu.classList.remove("active");
+    dropDownBar.checked = false;
+  }
+}
 
 ScrollReveal({
   reset: true,
   duration: 1000, 
-  distance: '50px', 
+  distance: '100px', 
   origin: 'bottom', 
 });
-
 
 ScrollReveal().reveal('.title', { delay: 200 });
 ScrollReveal().reveal('.first-text', { delay: 200 });
 ScrollReveal().reveal('.second-text', { delay: 350 });
-ScrollReveal().reveal('.third-text', { delay: 450 });
+ScrollReveal().reveal('.about-pic', { delay: 250, distance: '30px'});
+ScrollReveal().reveal('.text-container p', { delay: 300, distance: '50px'});
+ScrollReveal().reveal('.section__text img', { delay: 150, distance: '50px'});
+ScrollReveal().reveal('#contact .firsts', { delay: 250, distance: '50px'});
+ScrollReveal().reveal('#contact .seconds', { delay: 300, distance: '50px'});
+ScrollReveal().reveal('#contact .thirds', { delay: 350, distance: '50px'});
+ScrollReveal().reveal('footer', { delay: 450, distance: '50px'});
+ScrollReveal().reveal('#about .fir', { delay: 250, distance: '50px'});
+ScrollReveal().reveal('#about .sec', { delay: 300, distance: '50px'});
+ScrollReveal().reveal('#about .thd', { delay: 350, distance: '50px'});

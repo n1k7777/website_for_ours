@@ -1,5 +1,4 @@
 @media screen and (max-width: 1400px) {
-
   #profile {
     height: 83vh;
     margin-bottom: 6rem;
@@ -7,13 +6,49 @@
   .about-containers {
     flex-wrap: wrap;
   }
+  #about .title {
+    padding-bottom: 0;
   }
+  .about-pic {
+    width: 700px; 
+    height: 500px;
+  }
+  
+  .text-container p :not(.last-text) {
+    padding-top: 10rem;
+  }
+}
+
+@media screen and (max-width: 2000px) {
+  #about .title {
+    padding-bottom: 80px;
+  }
+  .about-pic {
+    width: 700px; 
+    height: 500px;
+  }
+  
+  .text-container p :not(.last-text) {
+    padding-top: 10rem;
+  }
+}
   
 @media screen and (max-width: 1200px) {
   #profile :is(h1, h2, p) {
     position: static;
     transform: none;
     text-align: center;
+    align-items: center;
+    margin-top: 20px;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #about .title {
+    padding-bottom: 0;
+  }
+
+  .text-container p :not(.last-text) {
+    padding-top: 10rem;
   }
 
   #profile :is(h1, p) {
@@ -54,31 +89,32 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 920px) {
   .hamburger {
     display: block;
   }
-  
-  .hamburger.active .bar:nth-child(2) {
-    opacity: 0;
+
+  a:hover {
+    text-underline-offset: 0.5rem;
   }
-    
-  .hamburger.active .bar:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
+  .about-pic {
+    width: 300px; 
+    height: auto; 
+  } 
+
+  .dropdown-btn:hover {
+    text-underline-offset: 0.5rem;
   }
-  
-  .hamburger.active .bar:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-  }
-  
+
   .nav-menu {
     position: fixed;
     left: -100%;
     top: 70px;
     gap: 0;
     flex-direction: column;
-    background-color: #262626;
+    background-color: #f4f4f4;
     width: 100%;
+    height: auto;
     text-align: center;
     transition: 0.3s;
     z-index: 1030;
@@ -91,67 +127,108 @@
   .nav-menu.active {
     left: 0;
   }
+  #about .title {
+    padding-bottom: 0;
+  }
+
+  .text-container p {
+    font-size: large;
+    word-spacing: 8px;
+  }
 }
 
 
   @media screen and (max-width: 600px) {
-  #profile :is(h1, h2, p) {
-    position: static;
-    transform: none;
-    text-align: center;
+    #about .title {
+      padding-bottom: 0;
+    }
+
+    .text-container p {
+      font-size: smaller;
+      word-spacing: 6px;
+    }
+
+    .text-container {
+      width: auto;
+    }
+
+    .about-pic {
+      width: 300px; 
+      height: auto; 
+    } 
+
+    a:hover {
+      text-underline-offset: 0.5rem;
+    }
+
+    #profile :is(h1, h2, p) {
+      position: static;
+      transform: none;
+      text-align: center;
+      align-items: center;
+      flex-direction: column;
+      margin-top: 20px;
+      justify-content: center;
+    }
+      
+    #contact,
+    #profile {
+      height: 83vh;
+      margin-bottom: 0;
+    }
+    article {
+      font-size: 1rem;
+    }
+    .about-containers,
+    .contact-info-upper-container,
+    .btn-container {
+      flex-wrap: wrap;
+    }
+    .contact-info-container {
+      margin: 0;
+    }
+    .contact-info-container p,
+    .nav-links li a {
+      font-size: 1rem;
+    }
+    .experience-sub-title {
+      font-size: 1.25rem;
+    }
+    .logo {
+      font-size: 1.5rem;
+    }
+    .nav-links {
+      flex-direction: column;
+      gap: 0.5rem;
+      text-align: center;
+    }
+    .section__pic-container {
+      width: auto;
+      height: 46vw;
+      justify-content: center;
+    }
+    .section__text__p2 {
+      font-size: 1.25rem;
+    }
+    .title {
+      font-size: 2rem;
+    }
+    .text-container {
+      text-align: justify;
+    }
+}
+
+@media screen and (max-width: 400px) {
+  header .logo_text {
+    font-size: 10px;
   }
-    
-  #contact,
-  footer {
-    height: 40vh;
-  }
-  #profile {
-    height: 83vh;
-    margin-bottom: 0;
-  }
-  article {
-    font-size: 1rem;
-  }
-  footer nav {
-    height: fit-content;
-    margin-bottom: 2rem;
-  }
-  .about-containers,
-  .contact-info-upper-container,
-  .btn-container {
-    flex-wrap: wrap;
-  }
-  .contact-info-container {
-    margin: 0;
-  }
-  .contact-info-container p,
-  .nav-links li a {
-    font-size: 1rem;
-  }
-  .experience-sub-title {
-    font-size: 1.25rem;
-  }
-  .logo {
-    font-size: 1.5rem;
-  }
-  .nav-links {
-    flex-direction: column;
-    gap: 0.5rem;
-    text-align: center;
-  }
-  .section__pic-container {
-    width: auto;
-    height: 46vw;
-    justify-content: center;
-  }
-  .section__text__p2 {
-    font-size: 1.25rem;
-  }
-  .title {
-    font-size: 2rem;
-  }
-  .text-container {
-    text-align: justify;
+
+  .about-pic {
+    width: 300px; 
+    height: auto; 
+  } 
+
+  header .image-in {
+    transform: scale(0.6);
   }
 }
-  
