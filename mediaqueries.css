@@ -90,6 +90,12 @@
 }
 
 @media screen and (max-width: 920px) {
+  .text-container p {
+    word-spacing: 10px;
+    font-size: xx-large;
+  }
+
+
   .hamburger {
     display: block;
   }
@@ -145,7 +151,8 @@
 
     .text-container p {
       font-size: smaller;
-      word-spacing: 6px;
+      word-spacing: 5px;
+      line-height: normal;
     }
 
     .text-container {

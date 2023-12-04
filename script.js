@@ -33,7 +33,7 @@ function closeMenu() {
 
 ScrollReveal({
   reset: true,
-  duration: 1000, 
+  duration: 450, 
   distance: '100px', 
   origin: 'bottom', 
 });
@@ -47,7 +47,6 @@ ScrollReveal().reveal('.section__text img', { delay: 150, distance: '50px'});
 ScrollReveal().reveal('#contact .firsts', { delay: 250, distance: '50px'});
 ScrollReveal().reveal('#contact .seconds', { delay: 300, distance: '50px'});
 ScrollReveal().reveal('#contact .thirds', { delay: 350, distance: '50px'});
-ScrollReveal().reveal('footer', { delay: 450, distance: '50px'});
 ScrollReveal().reveal('#about .fir', { delay: 250, distance: '50px'});
 ScrollReveal().reveal('#about .sec', { delay: 300, distance: '50px'});
 ScrollReveal().reveal('#about .thd', { delay: 350, distance: '50px'});
